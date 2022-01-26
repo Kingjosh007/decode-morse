@@ -11,12 +11,12 @@ def decode_morse_char(str)
   value.keys[0]
 end
 
-def decode_morse_word(word)
+def decode_morse_wor(word)
   word = word.split
   word.map! { |x| decode_morse_char(x) }
   word.join
 end
-decode_morse_word('-- -.--')
+decode_morse_wor('-- -.--')
 
 def decode_morse_sentence(str)
   str = str.split('   ')
