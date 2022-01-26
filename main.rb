@@ -39,7 +39,6 @@ def decode_morse_char(s)
   }
   value = morse_hash.select { |k,v| v == s }
   return value.keys[0]
-
 end
 
 
@@ -48,6 +47,14 @@ def decode_morse_word(w)
   w.map! { |x| decode_morse_char(x) }
   return w.join("")
 end
+decode_morse_word("-- -.--")
 
+def decode_morse_sentence(s)
+    s = s.split("   ")
+    s.map! { |x| decode_morse_word(x) }
+    return s.join(" ")
+end
+
+decode_morse_sentence("-- -.--   -. .- -- .")
 
 
