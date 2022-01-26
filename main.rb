@@ -42,5 +42,12 @@ def decode_morse_char(s)
 
 end
 
-decode_morse_char("--.")
+
+def decode_morse_word(w)
+  w = w.split(" ")
+  w.map! { |x| decode_morse_char(x) }
+  return w.join("")
+end
+
+
 
